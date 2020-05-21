@@ -4,7 +4,9 @@ import youtube from './apis/youtube'
 import VideoList from './VideoList'
 import VideoDetail from './VideoDetail'
 
-const KEY = 'AIzaSyBNWDE-MT3wa-GsAixQOvtByQKUzB1BNhM'
+require('dotenv').config()
+
+console.log(process.env)
 
 class App extends React.Component {
 
@@ -25,7 +27,7 @@ class App extends React.Component {
               q: text,
               part: "snippet",
               maxResults: 5,
-              key: KEY,
+              key: process.env.REACT_APP_YOUTUBE_API_KEY,
               type: 'video'
             }
           });
